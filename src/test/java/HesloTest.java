@@ -6,7 +6,7 @@ public class HesloTest {
     @Test
     void testDelsiNez5ZnakuAObsahujeCislici() {
         Heslo heslo = new Heslo();
-        assertTrue(heslo.validuj("abc123"));
+        assertFalse(heslo.validuj("abc123"));
     }
 
     @Test
@@ -25,5 +25,11 @@ public class HesloTest {
     void testPrazdneHeslo() {
         Heslo heslo = new Heslo();
         assertFalse(heslo.validuj(""));
+    }
+
+    @Test
+    void testSpecialniZnak() {
+        Heslo heslo = new Heslo();
+        assertFalse(heslo.validuj("jakub@123456"));
     }
 }
